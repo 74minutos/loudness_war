@@ -1,2 +1,7 @@
 env
+__pycache__
 .git
+credentials
+audio_analysis
+test_dir
+results
