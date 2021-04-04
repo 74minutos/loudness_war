@@ -2,10 +2,9 @@ import spotipy
 import argparse
 import json
 import os
-import pandas as pd
 from typing import Dict, List, Any
 from spotipy.oauth2 import SpotifyClientCredentials
-from audio_analysis_to_dash import get_tracks
+from get_data_from_spotify import get_tracks
 
 
 def track_analysis_to_directory(directory: str, data: Any, filename: Any) -> None:
@@ -21,7 +20,7 @@ def make_track_analysis(track_id:str, time:str, loudness:str) -> Dict:
         'loudness': loudness
     }
 
-def get_audio_analysis(track_id:str, spotify_api:str) -> Dict:
+def get_audio_analysis(track_id:str, spotify_api:Any) -> List:
     audio_analysis = []
     data = spotify_api.audio_analysis(track_id)
     for i in data['segments']:
