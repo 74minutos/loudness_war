@@ -3,3 +3,6 @@ mypy
 pandas
 dash
 spotipy
+gunicorn
+streamlit
+altair

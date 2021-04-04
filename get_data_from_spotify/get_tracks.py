@@ -2,7 +2,6 @@ import spotipy
 import argparse
 import json
 import os
-import pandas as pd
 from typing import Dict, List, Any
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -16,7 +15,8 @@ DECADES = ['year:1960-1969',
     'year:1980-1989',
     'year:1990-1999',
     'year:2000-2009',
-    'year:2010-2019']
+    'year:2010-2019',
+    'year:2020-2029']
 
 def make_track(track_name:str, track_id:str, album_name:str, artist_name:str, popularity:str, decade:str) -> Dict:
     return {
@@ -35,7 +35,7 @@ def get_first_year_from_decade(decade:str) -> str:
     return first_year
 
 
-def get_tracks(decade: str, spotify_api:str) -> List:
+def get_tracks(decade: str, spotify_api:Any) -> List:
     tracks = []
     year = get_first_year_from_decade(decade)
     for i in range(0,1000, 50):
