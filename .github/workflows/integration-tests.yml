@@ -29,9 +29,13 @@ jobs:
       - name: run linter tests
         run: |
           env/bin/python -m flake8 --select F audio_analysis_to_dash
+          env/bin/python -m flake8 --select F audio_analysis_to_streamlit
+          env/bin/python -m flake8 --select F get_data_from_spotify
         working-directory: ./
 
       - name: run mypy tests
         run: |
           env/bin/python -m mypy --check-untyped-defs --ignore-missing-imports audio_analysis_to_dash
+          env/bin/python -m mypy --check-untyped-defs --ignore-missing-imports audio_analysis_to_streamlit
+          env/bin/python -m mypy --check-untyped-defs --ignore-missing-imports get_data_from_spotify
         working-directory: ./
