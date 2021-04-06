@@ -16,6 +16,8 @@ I develop this using windows, so if you're using linux or os, I write some notes
   * [mypy type checks](#mypy-type-checks)
   * [folders](#folders)
   * [linux and os specs](#linux-and-os)
+* [Dash](#dash)
+* [Streamlit](#streamlit)
 
 ## Usage
 We assume credentials are kept in the `credentials/` directory on a json format (client_id: XXXX...), which is .gitignored.
@@ -97,3 +99,18 @@ You need to change syntax of the calls like this:
 
 * env\Scripts\python -> env/bin/python
 * The ^ as line break -> \
+
+## Dash
+This allows you to launch the dashboard on dash on a local server:
+```
+env\Scripts\python -m audio_analysis_to_dash.data_to_dash
+```
+To put this dashboard on a server, we can use a tool like [Heroku](https://www.heroku.com/)
+
+## Streamlit
+
+This allows you to launch the dashboard on streamlit on a local server:
+```
+env\Scripts\streamlit run audio_analysis_to_streamlit\data_to_streamlit.py
+```
+To share publicly this dashboard, you have to [ask for a invitation](https://streamlit.io/sharing)
