@@ -6,3 +6,4 @@ spotipy
 gunicorn
 streamlit
 altair
+lfs
