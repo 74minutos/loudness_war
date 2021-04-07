@@ -1,4 +1,6 @@
 import urllib.request
+import json
+import urllib.request
 import streamlit as st
 import pandas as pd
 import altair as alt
@@ -7,7 +9,7 @@ st.set_page_config(page_icon="assets\favicon.ico",
                    layout='wide')
 st.title('Loudness Analysis')
 url_data = "https://github.com/74minutos/loudness_war/releases/download/streamlit/joined_data.csv"
-data = pd.read_table(url_data)
+data = pd.read_csv(urllib.request.urlopen(url_data), delimiter=";")
 
 st.markdown("This is a little personal geek project where you can find a loudness analysis for over 6.000 songs")
 
