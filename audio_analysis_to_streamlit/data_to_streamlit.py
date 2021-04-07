@@ -5,7 +5,7 @@ import altair as alt
 st.set_page_config(page_icon="assets\favicon.ico",
                    layout='wide')
 st.title('Loudness Analysis')
-url_ data = "https://github.com/74minutos/loudness_war/blob/main/results/joined_data.csv?raw=true"
+url_data = "https://github.com/74minutos/loudness_war/blob/main/results/joined_data.csv?raw=true"
 data = pd.read_csv(url, sep=";")
 
 st.markdown("This is a little personal geek project where you can find a loudness analysis for over 6.000 songs")
