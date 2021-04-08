@@ -1,6 +1,4 @@
 import urllib.request
-import json
-import urllib.request
 import streamlit as st
 import pandas as pd
 import altair as alt
@@ -23,7 +21,7 @@ for i in song:
     filtered_data = data.loc[mask, :]
 
     chart = alt.Chart(filtered_data).mark_line().encode(
-        alt.X('time'),
+        alt.X('time(s)'),
         alt.Y('loudness',
             scale=alt.Scale(domain=(-60, 5))
         ))

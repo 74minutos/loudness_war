@@ -1,12 +1,15 @@
 import dash
+import urllib.request
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import numpy as np
 from dash.dependencies import Output, Input
 
-data = pd.read_csv("results\joined_data.csv", sep=";")
+url_data = "https://github.com/74minutos/loudness_war/releases/download/streamlit/joined_data.csv"
+data = pd.read_csv(urllib.request.urlopen(url_data), delimiter=";")
 data["time"] = pd.to_datetime(data["time"], unit='m')
+
 
 external_stylesheets = [
     {
@@ -16,6 +19,7 @@ external_stylesheets = [
     },
 ]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 app.title = "Loudness analysis in over 6.000 songs"
 
 app.layout = html.Div(
