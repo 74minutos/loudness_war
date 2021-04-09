@@ -21,7 +21,7 @@ for i in song:
     filtered_data = data.loc[mask, :]
 
     chart = alt.Chart(filtered_data).mark_line().encode(
-        alt.X('time(s)'),
+        alt.X('time'),
         alt.Y('loudness',
             scale=alt.Scale(domain=(-60, 5))
         ))
