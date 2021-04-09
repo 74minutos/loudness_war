@@ -106,7 +106,7 @@ You need to change syntax of the calls like this:
 ## Dash
 This allows you to launch the dashboard on dash on a local server:
 ```
-env\Scripts\python -m audio_analysis_to_dash.data_to_dash
+env\Scripts\python -m audio_analysis_to_dash.app
 ```
 To put this dashboard on a server, we can use a tool like [Heroku](https://www.heroku.com/)
 
