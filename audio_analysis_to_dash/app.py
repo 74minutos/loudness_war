@@ -7,9 +7,8 @@ import numpy as np
 from dash.dependencies import Output, Input
 
 url_data = "https://github.com/74minutos/loudness_war/releases/download/streamlit/joined_data.csv"
-data = pd.read_csv(urllib.request.urlopen(url_data), delimiter=";")
+data = pd.read_csv(urllib.request.urlopen(url_data), delimiter=";", nrows=100000)
 data["time"] = pd.to_datetime(data["time"], unit='m')
-
 
 external_stylesheets = [
     {
